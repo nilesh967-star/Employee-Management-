@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-image: url('employee_dashboard_bg.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #00246B;
+        }
+        .navbar-brand, .nav-link {
+            color: #CADCFC !important;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23CADCFC' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .dashboard-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .btn-custom {
+            background-color: #00246B;
+            color: #CADCFC;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn-custom:hover {
+            background-color: #CADCFC;
+            color: #00246B;
+        }
+        h3 {
+            color: #00246B;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Employee Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/view-profile}">View Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/attendance}">Attendance</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/logout}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="dashboard-container">
+    <h3>Welcome, Employee!</h3>
+    <p>As an employee, you can view your profile, check attendance, and track your performance.</p>
+    <div>
+        <button class="btn-custom" th:href="@{/view-profile}">View Profile</button>
+        <button class="btn-custom" th:href="@{/attendance}">Check Attendance</button>
+        <button class="btn-custom" th:href="@{/performance}">Performance Reports</button>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registration Success</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        /* Custom Styles */
+		body {
+		            background-image: url('index.webp'); /* Replace with your image URL */
+		            background-size: cover;
+		            background-position: center;
+		            background-repeat: no-repeat;
+		            font-family: Arial, sans-serif;
+		        }
+        .navbar {
+            background-color: #00246B; /* Deep navy navbar */
+        }
+        .navbar-brand, .nav-link {
+            color: #CADCFC !important; /* Light blue text for navbar links */
+        }
+        .navbar-toggler {
+            border-color: #CADCFC;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23CADCFC' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        h3 {
+            color: #00246B; /* Deep navy for the heading */
+            margin-top: 50px;
+        }
+        h4 a {
+            color: #00246B; /* Deep navy for the login link */
+            text-decoration: none;
+            font-weight: bold; /* Bold text for better emphasis */
+        }
+        h4 a:hover {
+            color: #CADCFC; /* Hover effect with light blue */
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .btn-custom {
+            background-color: #00246B; /* Deep navy button */
+            color: #CADCFC; /* Light blue text */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn-custom:hover {
+            background-color: #CADCFC; /* Light blue hover */
+            color: #00246B; /* Deep navy text on hover */
+        }
+        /* Adding a subtle shadow effect */
+        .navbar, .btn-custom, h3, h4 {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Additional styling for an enhanced design */
+        .content-box {
+            background-color: #00246B; /* Deep navy box */
+            color: #CADCFC; /* Light blue text inside the box */
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .content-box p {
+            font-size: 16px;
+            color: #CADCFC; /* Light blue text */
+        }
+        .content-box a {
+            color: #CADCFC; /* Light blue link */
+        }
+        .content-box a:hover {
+            color: #FFFFFF; /* White on hover */
+        }
+        .icon {
+            font-size: 50px;
+            color: #CADCFC;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Employee Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/register}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container text-center">
+    <h3>You have signed up successfully!</h3>
+    <h4><a th:href="@{/login}">Click here to Login</a></h4>
+
+    <!-- New content section for an attractive design -->
+    <div class="content-box">
+        <h4>What to do next?</h4>
+        <p>Start exploring the Employee Management platform and experience streamlined management:</p>
+        <ul class="list-unstyled">
+            <li><strong><i class="icon glyphicon glyphicon-user"></i> Manage Your Profile:</strong> Update your personal information and settings.</li>
+            <li><strong><i class="icon glyphicon glyphicon-list-alt"></i> View Employee Records:</strong> Access and manage employee details quickly and efficiently.</li>
+            <li><strong><i class="icon glyphicon glyphicon-time"></i> Track Attendance:</strong> Keep track of employee attendance and punctuality.</li>
+        </ul>
+        <p>Need help? Visit our <a href="#">Support Center</a> for assistance.</p>
+    </div>
+
+    <button class="btn-custom">Go to Dashboard</button> <!-- Custom button -->
+</div>
+
+</body>
+</html>

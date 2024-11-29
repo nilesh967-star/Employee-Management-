@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Welcome to Employee Management</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        /* Custom Styles */
+		body {
+		            background-image: url('index.webp'); /* Replace with your image URL */
+		            background-size: cover;
+		            background-position: center;
+		            background-repeat: no-repeat;
+		            font-family: Arial, sans-serif;
+		        }
+        .navbar {
+            background-color: #00246B; /* Deep navy navbar */
+        }
+        .navbar-brand, .nav-link {
+            color: #CADCFC !important; /* Light blue text for navbar links */
+        }
+        .navbar-toggler {
+            border-color: #CADCFC; /* Light blue border for navbar toggler */
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23CADCFC' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        h1 {
+            color: #00246B; /* Deep navy heading */
+            margin-top: 30px;
+        }
+        h3 a {
+            color: #00246B; /* Deep navy text for links */
+            text-decoration: none;
+        }
+        h3 a:hover {
+            color: #CADCFC; /* Hover effect with light blue */
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn-custom {
+            background-color: #00246B; /* Deep navy button */
+            color: #CADCFC; /* Light blue text for button */
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #CADCFC; /* Light blue hover effect */
+            color: #00246B; /* Deep navy text on hover */
+        }
+        /* Add a subtle shadow to make elements stand out */
+        .navbar, .btn-custom, h1 {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Additional Styles for Features Section */
+        .features {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #00246B;
+            color: #CADCFC;
+            border-radius: 10px;
+        }
+        .features h2 {
+            color: #CADCFC;
+        }
+        .features p {
+            color: #CADCFC;
+            font-size: 16px;
+        }
+        .btn-learn-more {
+            background-color: #CADCFC;
+            color: #00246B;
+            border: none;
+        }
+        .btn-learn-more:hover {
+            background-color: #00246B;
+            color: #CADCFC;
+            border: 1px solid #CADCFC;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Employee Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/register}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container text-center">
+    <h1>Welcome to Employee Management</h1>
+    <p>Your go-to platform for managing employees efficiently and effectively.</p>
+
+    <div class="features">
+        <h2>Key Features:</h2>
+        <ul class="list-unstyled">
+            <li><strong>Streamlined Employee Records:</strong> Easily store and retrieve employee information.</li>
+            <li><strong>Attendance Management:</strong> Keep track of employee attendance with just a few clicks.</li>
+            <li><strong>Performance Reviews:</strong> Manage and review employee performance seamlessly.</li>
+            <li><strong>Payroll Integration:</strong> Automate payroll management with integrated tools.</li>
+        </ul>
+        <button class="btn btn-learn-more mt-3">Learn More</button>
+    </div>
+</div>
+
+</body>
+</html>

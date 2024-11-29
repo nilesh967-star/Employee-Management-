@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Sign Up - Employee Management</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        /* Custom Styles */
+        body {
+            background-image: url('userback.jpg'); /* Path to the image in the static folder */
+            background-size: cover; /* Ensure the image covers the whole page */
+            background-position: center center; /* Center the background image */
+            color: #00246B; /* Dark blue text */
+            margin: 0;
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        .navbar {
+            background-color: #00246B; /* Dark blue navbar */
+            width: 100%; /* Full width */
+            z-index: 1000; /* Ensure it is above other content */
+        }
+        .navbar-brand, .nav-link {
+            color: #CADCFC !important; /* Light blue text for navbar */
+        }
+        .navbar-toggler {
+            border-color: #CADCFC;
+        }
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(202,220,252,1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+        }
+        h1 {
+            color: #00246B; /* Dark blue for heading */
+            margin-top: 30px; /* Margin for the heading */
+            text-align: center;
+            font-weight: bold;
+        }
+        label {
+            color: #00246B; /* Dark blue for label text */
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 10px;
+            border-color: #00246B;
+        }
+        .form-control:focus {
+            border-color: #CADCFC; /* Light blue focus outline */
+            box-shadow: 0 0 5px rgba(202, 220, 252, 0.8); /* Subtle focus glow */
+        }
+        .container {
+            margin-top: 20px; /* Space for the form */
+            background-color: rgba(255, 255, 255, 0.85); /* White background with transparency for the form */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+            max-width: 600px;
+            margin-bottom: 50px; /* Ensure some space below the container for scrolling */
+        }
+        .btn-primary {
+            background-color: #00246B; /* Dark blue button */
+            border-color: #00246B;
+            color: #CADCFC;
+        }
+        .btn-primary:hover {
+            background-color: #CADCFC; /* Light blue hover */
+            border-color: #CADCFC;
+            color: #00246B;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .col-form-label {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Employee Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/register}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>User Registration - Sign Up</h1>
+	<form th:action="@{/process_register}" method="post" th:object="${user}">
+	    <div class="form-group">
+	        <label for="firstName">First Name:</label>
+	        <input type="text" id="firstName" name="firstName" th:field="*{firstName}" class="form-control" required />
+	    </div>
+	    <div class="form-group">
+	        <label for="lastName">Last Name:</label>
+	        <input type="text" id="lastName" name="lastName" th:field="*{lastName}" class="form-control" required />
+	    </div>
+	    <div class="form-group">
+	        <label for="email">Email:</label>
+	        <input type="email" id="email" name="email" th:field="*{email}" class="form-control" required />
+	    </div>
+	    <div class="form-group">
+	        <label for="password">Password:</label>
+	        <input type="password" id="password" name="password" th:field="*{password}" class="form-control" required />
+	    </div>
+	    <div class="form-group">
+	        <label for="dateOfBirth">Date of Birth:</label>
+	        <input type="date" id="dateOfBirth" name="dateOfBirth" th:field="*{dateOfBirth}" class="form-control" required />
+	    </div>
+	    <div class="form-group">
+	        <label for="gender">Gender:</label>
+	        <select id="gender" name="gender" th:field="*{gender}" class="form-control" required>
+	            <option value="Male">Male</option>
+	            <option value="Female">Female</option>
+	            <option value="Other">Other</option>
+	        </select>
+	    </div>
+	    <div class="form-group">
+	        <label for="address">Address:</label>
+	        <input type="text" id="address" name="address" th:field="*{address}" class="form-control" required />
+	    </div>
+	    <div class="form-group">
+	        <label for="city">City:</label>
+	        <input type="text" id="city" name="city" th:field="*{city}" class="form-control" required />
+	    </div>
+	    <div class="form-group">
+	        <label for="state">State:</label>
+	        <input type="text" id="state" name="state" th:field="*{state}" class="form-control" required />
+	    </div>
+	    <button type="submit" class="btn btn-primary">Register</button>
+	</form>
+
+</div>
+
+</body>
+</html>
